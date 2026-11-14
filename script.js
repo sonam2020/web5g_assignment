@@ -441,35 +441,182 @@ function showTab(tabName) {
 
     }
 
+// enquery tab
 
-    // ENQUIRY TAB
+else if (tabName === "enquiry") {
 
-    else if (tabName === "enquiry") {
+    content = `
+        <span class="drawer-label">GET IN TOUCH</span>
 
-        content = `
-            <span class="drawer-label">GET IN TOUCH</span>
+        <h3>Let's Discuss Your Project</h3>
 
-            <h3>Get a Free Quote for ${service.title}</h3>
+        <p>Share a few details about your requirements.
+        Our team will get in touch with you shortly.</p>
 
-            <p>Tell us about your space and requirements.
-            Our team will get in touch with you.</p>
+        <form id="serviceEnquiryForm" class="service-enquiry-form">
 
-            <h4>Discuss your project with us</h4>
+            <div class="enquiry-field">
+                <label for="serviceName">Your Name *</label>
+                <input type="text" id="serviceName"
+                    placeholder="Enter your full name" required>
+            </div>
 
-            <p>Get expert advice, design ideas and
-            an estimate for your interior project.</p>
+            <div class="enquiry-field">
+                <label for="servicePhone">Phone Number *</label>
+                <input type="tel" id="servicePhone"
+                    placeholder="Enter 10-digit mobile number"
+                    maxlength="10" pattern="[6-9][0-9]{9}" required>
+            </div>
 
-            <a href="#contact" class="drawer-cta">
-                Book Free Consultation →
-            </a>
+            <div class="enquiry-field">
+                <label for="serviceProperty">Property Type *</label>
+                <select id="serviceProperty" required>
+                    <option value="">Select property type</option>
+                    <option>Apartment</option>
+                    <option>Independent House</option>
+                    <option>Villa</option>
+                    <option>Office</option>
+                    <option>Commercial Space</option>
+                    <option>Other</option>
+                </select>
+            </div>
 
-        `;
+            <div class="enquiry-field">
+                <label for="serviceLocation">Project Location</label>
+                <input type="text" id="serviceLocation"
+                    placeholder="Enter your city or locality">
+            </div>
 
-    }
+            <div class="enquiry-field">
+                <label for="serviceRequirement">Your Requirements</label>
+                <textarea id="serviceRequirement"
+                    rows="4"
+                    placeholder="Tell us about your interior design requirements..."></textarea>
+            </div>
 
+            <button type="submit" class="drawer-cta enquiry-submit">
+                Submit Enquiry →
+            </button>
+
+        </form>
+    `;
+
+}
 
     drawerContent.innerHTML = content;
 
     drawerContent.scrollTop = 0;
 
 }
+
+/*review scroll reveal */
+
+const reviewObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            reviewObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+document.querySelectorAll("#reviews .reveal").forEach(element => {
+    reviewObserver.observe(element);
+});
+
+
+
+//service enquery 
+
+document.addEventListener("submit", function (event) {
+
+    if (event.target.id !== "serviceEnquiryForm") return;
+
+    event.preventDefault();
+
+    const name = document.getElementById("serviceName").value.trim();
+    const phone = document.getElementById("servicePhone").value.trim();
+    const property = document.getElementById("serviceProperty").value;
+    const location = document.getElementById("serviceLocation").value.trim();
+    const requirement = document.getElementById("serviceRequirement").value.trim();
+
+    if (!/^[6-9][0-9]{9}$/.test(phone)) {
+        alert("Please enter a valid 10-digit mobile number.");
+        return;
+    }
+
+    const service = serviceData[currentService];
+
+    const message =
+        `Hello Jain Signature Studio!
+
+I am interested in your ${service.title} service.
+
+Name: ${name}
+Phone: ${phone}
+Property Type: ${property}
+Location: ${location || "Not specified"}
+Requirements: ${requirement || "Not specified"}`;
+
+    const whatsappURL =
+        "https://wa.me/919643431551?text=" +
+        encodeURIComponent(message);
+
+    window.open(whatsappURL, "_blank");
+
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll(
+        ".service-grid, .projects-section, .process-section, .why-section, .review-section, .faq-section, .main-footer"
+    );
+
+    sections.forEach(section => {
+        section.classList.add("scroll-reveal");
+    });
+
+    const cards = document.querySelectorAll(
+        ".service-card, .portfolio-card, .why-item, .review-card"
+    );
+
+    cards.forEach(card => {
+        card.classList.add("reveal-item");
+    });
+
+   
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("revealed");
+                observer.unobserve(entry.target);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    cards.forEach((card, index) => {
+
+        card.style.transitionDelay = `${(index % 3) * 0.15}s`;
+
+        observer.observe(card);
+
+    });
+
+});
+
