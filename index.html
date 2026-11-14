@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jain Signature Studio | Home Interiors</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <a href="#" class="logo">
+        <span class="logo-icon">JSI</span>
+        <span class="logo-text">
+            JAIN SIGNATURE
+            <small>STUDIO LLP</small>
+        </span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav id="navMenu">
+        <a href="#services">Services</a>
+        <a href="#projects">Our Projects</a>
+        <a href="#process">How It Works</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#faqs">FAQs</a>
+    </nav>
+
+    <a href="tel:+919643431551" class="phone">
+        ☎ +91 96434 31551
+    </a>
+
+    <div class="explore">
+        <button id="exploreBtn">▦ Explore More ﹀</button>
+        <div class="dropdown" id="exploreDropdown">
+            <a href="#services">Our Services</a>
+            <a href="#projects">Project Gallery</a>
+            <a href="#contact">Free Consultation</a>
+        </div>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-container">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                <span></span> HOME & VILLA INTERIORS
+            </div>
+
+            <h1>
+                You Dream It, <span>We<br> Design It</span>
+            </h1>
+
+            <p class="hero-description">
+                Full home interiors, modular kitchens, wardrobes and
+                renovation for apartments, independent homes and villas
+                across Ghaziabad and Delhi NCR — designed, built and
+                installed by one team.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">
+                    Get a Free Design Quote →
+                </a>
+
+                <a href="https://wa.me/919643431551"
+                   target="_blank" class="btn-outline">
+                    ◉ WhatsApp Us
+                </a>
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <span>☆</span>
+                    <p><strong>4.9/5</strong> from 4200+ reviews</p>
+                </div>
+
+                <div class="stat">
+                    <span>⌂</span>
+                    <p><strong>250+</strong> projects completed</p>
+                </div>
+
+                <div class="stat">
+                    <span>♧</span>
+                    <p><strong>55+</strong> expert team</p>
+                </div>
+
+                <div class="stat">
+                    <span>✓</span>
+                    <p><strong>98%</strong> client satisfaction</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- CONSULTATION FORM -->
+        <div class="form-card" id="contact">
+
+            <div class="form-header">
+                <h2>Book Your Free Consultation</h2>
+                <p>
+                    Talk to our interior designer and get an estimate.
+                    No obligation.
+                </p>
+            </div>
+
+            <form id="quoteForm">
+
+                <div class="form-body">
+
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" id="name"
+                               placeholder="e.g. Rahul Sharma" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" id="phone"
+                               placeholder="10-digit mobile number"
+                               pattern="[6-9][0-9]{9}"
+                               maxlength="10" required>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label>Property Type *</label>
+                            <select id="property" required>
+                                <option value="">Select</option>
+                                <option>Apartment</option>
+                                <option>Independent Home</option>
+                                <option>Villa</option>
+                                <option>Office / Commercial</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Scope</label>
+                            <select id="scope">
+                                <option value="">Select</option>
+                                <option>Full Home Interiors</option>
+                                <option>Modular Kitchen</option>
+                                <option>Wardrobes</option>
+                                <option>Renovation</option>
+                                <option>Single Room</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>City / Locality</label>
+                        <input type="text" id="locality"
+                               placeholder="e.g. Raj Nagar Extension, Ghaziabad">
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Get My Free Quote →
+                    </button>
+
+                    <p class="privacy">
+                        🔒 Your details stay private. We never share
+                        or sell your data.
+                    </p>
+
+                    <p id="formMessage"></p>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+<!-- <section class="section" id="services">
+    <div class="section-heading">
+        <span>WHAT WE OFFER</span>
+        <h2>Beautiful Spaces, <em>Thoughtfully Designed</em></h2>
+        <p>Everything you need to transform your house into a beautiful home.</p>
+    </div>
+
+    <div class="service-grid">
+        <article class="service-card">
+            <div class="service-image kitchen"></div>
+            <div class="service-info">
+                <h3>Modular Kitchens</h3>
+                <p>Modern kitchens designed for beauty, comfort and functionality.</p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image living"></div>
+            <div class="service-info">
+                <h3>Living Room Interiors</h3>
+                <p>Elegant living spaces that reflect your personality.</p>
+            </div>
+        </article>
+
+        <article class="service-card">
+            <div class="service-image bedroom"></div>
+            <div class="service-info">
+                <h3>Bedroom Interiors</h3>
+                <p>Relaxing bedrooms with smart storage and premium finishes.</p>
+            </div>
+        </article>
+    </div>
+</section> -->
+
+<section class="section" id="services">
+
+    <div class="section-heading">
+        <span>WHAT WE OFFER</span>
+        <h2>Beautiful Spaces, <em>Thoughtfully Designed</em></h2>
+        <p>Everything you need to transform your house into a beautiful home.</p>
+    </div>
+
+    <div class="service-grid">
+
+        <!-- Modular Kitchen -->
+        <article class="service-card">
+            <div class="service-image kitchen">
+                <span class="service-tag">MODULAR</span>
+            </div>
+            <div class="service-info">
+                <h3>Modular Kitchens</h3>
+                <p>Modern kitchens designed for beauty, comfort and functionality.</p>
+
+                <ul>
+                    <li>Custom kitchen layouts</li>
+                    <li>Premium cabinets and finishes</li>
+                    <li>Smart storage solutions</li>
+                </ul>
+
+                <button class="explore-btn" data-service="kitchen">
+                    Explore Service <span>→</span>
+                </button>
+            </div>
+        </article>
+
+        <!-- Living Room -->
+        <article class="service-card">
+            <div class="service-image living">
+                <span class="service-tag">RESIDENTIAL</span>
+            </div>
+            <div class="service-info">
+                <h3>Living Room Interiors</h3>
+                <p>Elegant living spaces that reflect your personality.</p>
+
+                <ul>
+                    <li>Modern furniture and decor</li>
+                    <li>False ceiling and lighting</li>
+                    <li>TV units and wall designs</li>
+                </ul>
+
+                <button class="explore-btn" data-service="living">
+                    Explore Service <span>→</span>
+                </button>
+            </div>
+        </article>
+
+        <!-- Bedroom -->
+        <article class="service-card">
+            <div class="service-image bedroom">
+                <span class="service-tag">LUXURY</span>
+            </div>
+            <div class="service-info">
+                <h3>Bedroom Interiors</h3>
+                <p>Relaxing bedrooms with smart storage and premium finishes.</p>
+
+                <ul>
+                    <li>Custom wardrobes</li>
+                    <li>Designer beds and headboards</li>
+                    <li>Premium lighting and decor</li>
+                </ul>
+
+                <button class="explore-btn" data-service="bedroom">
+                    Explore Service <span>→</span>
+                </button>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+
+<!-- SERVICE SIDEBAR -->
+
+<div class="service-overlay" id="serviceOverlay"></div>
+
+<aside class="service-drawer" id="serviceDrawer">
+
+    <div class="drawer-header">
+
+        <div>
+            <span class="drawer-category" id="drawerCategory">RESIDENTIAL</span>
+            <h2 id="drawerTitle">Living Room Interiors</h2>
+        </div>
+
+        <button class="drawer-close" id="drawerClose" aria-label="Close">
+            &times;
+        </button>
+
+    </div>
+
+    <nav class="drawer-tabs">
+        <button class="drawer-tab active" data-tab="about">About</button>
+        <button class="drawer-tab" data-tab="why">Why Us</button>
+        <button class="drawer-tab" data-tab="gallery">Gallery</button>
+        <button class="drawer-tab" data-tab="process">Process</button>
+        <button class="drawer-tab" data-tab="enquiry">Enquiry</button>
+    </nav>
+
+    <div class="drawer-body" id="drawerContent">
+        <!-- Dynamic content will load here -->
+    </div>
+
+</aside>
+
+<!-- PROJECTS -->
+<section class="section projects-section" id="projects">
+    <div class="section-heading">
+        <span>OUR PORTFOLIO</span>
+        <h2>Spaces That Tell <em>Your Story</em></h2>
+        <p>Discover our interior design work and get inspired.</p>
+    </div>
+
+    <div class="project-grid">
+        <div class="project project-one">
+            <div><h3>Modern Living</h3><p>Residential Interiors</p></div>
+        </div>
+        <div class="project project-two">
+            <div><h3>Luxury Kitchen</h3><p>Modular Kitchen</p></div>
+        </div>
+        <div class="project project-three">
+            <div><h3>Elegant Bedroom</h3><p>Bedroom Interiors</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<!-- <section class="section process-section" id="process">
+    <div class="section-heading">
+        <span>OUR PROCESS</span>
+        <h2>From Dream to Reality</h2>
+    </div>
+
+    <div class="process-grid">
+        <div><span>01</span><h3>Consultation</h3><p>Understand your needs and preferences.</p></div>
+        <div><span>02</span><h3>Design</h3><p>Create a personalized interior design.</p></div>
+        <div><span>03</span><h3>Execution</h3><p>Bring your design to life with our team.</p></div>
+        <div><span>04</span><h3>Handover</h3><p>Enjoy your beautiful new space.</p></div>
+    </div>
+</section> -->
+
+
+<section class="process-section" id="process">
+
+    <div class="process-content">
+
+        <h2>
+            Your Dream Home Starts With
+            <br>
+            One Free Call
+        </h2>
+
+        <p>
+            Talk to our interior designer, see your space in 3D
+            and get an estimate —
+            <br>
+            with no obligation to proceed.
+        </p>
+
+        <div class="process-buttons">
+
+            <a href="#contact" class="process-btn primary-btn">
+                Book Free Consultation
+                <span>→</span>
+            </a>
+
+            <a href="tel:+919643431551" class="process-btn secondary-btn">
+                <span class="phone-icon">♧</span>
+                Call +91 96434 31551
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY US -->
+<!-- <section class="section" id="why-us">
+    <div class="section-heading">
+        <span>WHY CHOOSE US</span>
+        <h2>Designed With Care, <em>Delivered With Trust</em></h2>
+    </div>
+
+    <div class="why-grid">
+        <div>✦ <h3>Expert Designers</h3><p>Creative designs tailored to your lifestyle.</p></div>
+        <div>✓ <h3>Quality Materials</h3><p>Premium materials and beautiful finishes.</p></div>
+        <div>⌂ <h3>One Team</h3><p>Design, build and installation under one roof.</p></div>
+        <div>♡ <h3>Customer First</h3><p>Your satisfaction is always our priority.</p></div>
+    </div>
+</section> -->
+
+<section class="section why-section" id="why-us">
+
+    <div class="section-heading why-heading">
+        <span>WHY JAIN SIGNATURE STUDIO</span>
+        <h2>One Company, <em>Start to Finish</em></h2>
+        <p>The reasons clients tell us they choose us over everyone else they shortlisted.</p>
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-item">
+            <div class="why-icon">⌂</div>
+            <h3>Design to Execution</h3>
+            <p>Design, production and installation handled by one company — no coordinating between separate vendors.</p>
+        </div>
+
+        <div class="why-item">
+            <div class="why-icon">♧</div>
+            <h3>300+ 3D Renders Delivered</h3>
+            <p>See photorealistic 3D visualization of your space before a single material is ordered.</p>
+        </div>
+
+        <div class="why-item">
+            <div class="why-icon">♙</div>
+            <h3>Expert Design Team</h3>
+            <p>Experienced designers, architects and site supervisors working together on your project.</p>
+        </div>
+
+        <div class="why-item">
+            <div class="why-icon">☆</div>
+            <h3>Quality You Can Trust</h3>
+            <p>Carefully selected materials and beautiful finishes that stand the test of time.</p>
+        </div>
+
+        <div class="why-item">
+            <div class="why-icon">◷</div>
+            <h3>Timely Project Delivery</h3>
+            <p>Milestone-tracked schedules with dedicated project coordination at every stage.</p>
+        </div>
+
+        <div class="why-item">
+            <div class="why-icon">♧</div>
+            <h3>Wide Material Choices</h3>
+            <p>Explore a wide range of finishes, textures and materials to suit your style and budget.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- REVIEWS -->
+<!-- <section class="section review-section" id="reviews">
+    <div class="section-heading">
+        <span>TESTIMONIALS</span>
+        <h2>What Our <em>Clients Say</em></h2>
+    </div>
+
+    <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>
+            "The team understood exactly what we wanted.
+            The design and finishing of our home look beautiful.
+            A wonderful experience from start to finish."
+        </p>
+        <h3>Happy Homeowner</h3>
+        <small>Delhi NCR</small>
+    </div>
+
+    
+</section> -->
+
+<section class="section review-section" id="reviews">
+
+    <div class="review-heading">
+        <span class="review-label">CLIENT REVIEWS</span>
+        <h2>Rated 4.9/5 Across 4200+<br> Reviews</h2>
+        <p>A 98% client satisfaction rate across 250+ completed residential and commercial projects.</p>
+    </div>
+
+    <div class="review-grid">
+
+        <div class="review-card">
+            <div class="quote-mark">“</div>
+            <div class="stars">★★★★★</div>
+            <p>Working with this team was one of the best decisions we made for our home. The finishing and attention to detail were wonderful.</p>
+            <div class="review-divider"></div>
+            <div class="review-author">
+                <div class="author-avatar">SH</div>
+                <div>
+                    <h3>Mr. Shailendra</h3>
+                    <small>Homeowner</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <div class="quote-mark">“</div>
+            <div class="stars">★★★★★</div>
+            <p>The entire experience was smooth and professional. Our kitchen and interiors turned out exactly how we imagined.</p>
+            <div class="review-divider"></div>
+            <div class="review-author">
+                <div class="author-avatar">CS</div>
+                <div>
+                    <h3>Ms. Charu Sahani</h3>
+                    <small>Homeowner</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="review-card featured-review">
+            <div class="quote-mark">“</div>
+            <div class="stars">★★★★★</div>
+            <p>Excellent coordination, beautiful designs and quality workmanship. We truly appreciate their dedication and support.</p>
+            <div class="review-divider"></div>
+            <div class="review-author">
+                <div class="author-avatar">VM</div>
+                <div>
+                    <h3>Mr. Vikas Mishra</h3>
+                    <small>Baba Construction</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faqs">
+    <div class="section-heading">
+        <span>HAVE QUESTIONS?</span>
+        <h2>Frequently Asked <em>Questions</em></h2>
+    </div>
+
+    <div class="faq-list">
+        <details>
+            <summary>Do you provide free consultation?</summary>
+            <p>Yes, you can book a free initial consultation with our team.</p>
+        </details>
+
+        <details>
+            <summary>Which locations do you serve?</summary>
+            <p>We serve Ghaziabad and Delhi NCR locations.</p>
+        </details>
+
+        <details>
+            <summary>Do you provide modular kitchen services?</summary>
+            <p>Yes, we provide customized modular kitchen design and installation.</p>
+        </details>
+
+        <details>
+            <summary>How can I get a project estimate?</summary>
+            <p>Fill out the consultation form and our team will contact you.</p>
+        </details>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<!-- <footer>
+    <div class="footer-logo">JAIN SIGNATURE <small>STUDIO LLP</small></div>
+    <p>Creating beautiful spaces for beautiful lives.</p>
+    <a href="tel:+919643431551">+91 96434 31551</a>
+    <p class="copyright">© 2026 Jain Signature Studio LLP. All rights reserved.</p>
+</footer> -->
+
+
+<footer class="main-footer">
+
+  <!-- Top CTA Section -->
+  <div class="footer-cta">
+    <div class="cta-content">
+      <h2>Ready to start your interior<br> project?</h2>
+      <p>Talk to our interior designer, see your space in 3D and get an estimate — with no obligation.</p>
+    </div>
+
+    <div class="cta-buttons">
+      <a href="tel:+919643431551" class="btn-gold">
+        Book Free Consultation <span>→</span>
+      </a>
+      <a href="https://wa.me/919643431551" class="btn-whatsapp" target="_blank">
+        <span>◉</span> WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer Main Content -->
+  <div class="footer-content">
+
+    <!-- Company Info -->
+    <div class="footer-column company-info">
+      <div class="footer-logo">
+        <span class="logo-icon">JSI</span>
+        <span class="logo-text">
+          JAIN SIGNATURE
+          <small>STUDIO LLP</small>
+        </span>
+      </div>
+
+      <p>
+        Jain Signature Studio LLP — full home interiors,
+        modular kitchens and wardrobes, renovation and
+        construction, and office interiors across Ghaziabad
+        and Delhi NCR. Design, production and execution
+        by one company.
+      </p>
+
+      <div class="social-links">
+        <a href="#" aria-label="Instagram">◎</a>
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="https://wa.me/919643431551" aria-label="WhatsApp">◉</a>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-column">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="#">Full Home Interior</a></li>
+        <li><a href="#">Modular Kitchen</a></li>
+        <li><a href="#">Modular Wardrobe</a></li>
+        <li><a href="#">Renovation & Construction</a></li>
+        <li><a href="#">Office & Commercial Interiors</a></li>
+        <li><a href="#">False Ceiling & Wall Decor</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-column contact-info">
+      <h3>Get In Touch</h3>
+
+      <div class="contact-item">
+        <span class="contact-icon">☎</span>
+        <div>
+          <small>CALL US</small>
+          <a href="tel:+919643431551">+91 96434 31551</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">✉</span>
+        <div>
+          <small>EMAIL</small>
+          <a href="mailto:info@jainstudio.co.in">
+            info@jainstudio.co.in
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <span class="contact-icon">⌖</span>
+        <div>
+          <small>STUDIO</small>
+          <p>L-08, GNB Mall, Raj Nagar Extension,<br>
+          Ghaziabad 201017, Uttar Pradesh</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Footer -->
+  <div class="footer-bottom">
+    <p>© 2026 Jain Signature Studio LLP. All rights reserved.</p>
+
+    <div>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms & Conditions</a>
+    </div>
+  </div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
